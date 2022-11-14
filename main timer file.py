@@ -50,7 +50,10 @@ ent6.grid(row=0, column=5, sticky="s", padx=2, pady=2)
 #define Funtions:
 
 def timer1Start():
-	t = str(ent1.get())
+	try:
+		t = str(ent1.get())
+	except ValueError:
+		t = "00"
 	s = "00"
 	global time1
 	time1 = "{0}:{1}".format(t, s)
@@ -60,7 +63,10 @@ def timer1Start():
 	startB1.config(state="active")
 
 def timer2Start():
-	t = str(ent2.get())
+	try:
+		t = str(ent2.get())
+	except ValueError:
+		t = "00"
 	s = "00"
 	global time2
 	time2 = "{0}:{1}".format(t, s)
@@ -70,7 +76,10 @@ def timer2Start():
 	startB2.config(state="active")
 
 def timer3Start():
-	t = str(ent3.get())
+	try:
+		t = str(ent3.get())
+	except ValueError:
+		t = str(00)
 	s = "00"
 	global time3
 	time3 = "{0}:{1}".format(t, s)
@@ -80,7 +89,10 @@ def timer3Start():
 	startB3.config(state="active")
 
 def timer4Start():
-	t = str(ent4.get())
+	try:
+		t = str(ent4.get())
+	except ValueError:
+		t = "00"
 	s = "00"
 	global time4
 	time4 = "{0}:{1}".format(t, s)
@@ -90,7 +102,10 @@ def timer4Start():
 	startB4.config(state="active")
 
 def timer5Start():
-	t = str(ent5.get())
+	try:
+		t = str(ent5.get())
+	except ValueError:
+		t = "00"
 	s = "00"
 	global time5
 	time5 = "{0}:{1}".format(t, s)
@@ -100,7 +115,10 @@ def timer5Start():
 	startB5.config(state="active")
 
 def timer6Start():
-	t = str(ent6.get())
+	try:
+		t = str(ent6.get())
+	except ValueError:
+		timer6.config(text="00:00")		
 	s = "00"
 	global time6
 	time6 = "{0}:{1}".format(t, s)
@@ -329,6 +347,55 @@ setB4.grid(row=1, column=3, sticky="w", padx=2, pady=2)
 setB5.grid(row=1, column=4, sticky="w", padx=2, pady=2)
 setB6.grid(row=1, column=5, sticky="w", padx=2, pady=2)
 
+def setB1state():
+	if ent1.get() == "":
+		setB1.config(state="disabled")
+		setB1.after(1000, setB1state)
+	else:
+		setB1.config(state="active")
+		setB1.after(1000, setB1state)
+
+def setB2state():
+	if ent2.get() == "":
+		setB2.config(state="disabled")
+		setB2.after(1000, setB2state)
+	else:
+		setB2.config(state="active")
+		setB2.after(1000, setB2state)
+
+def setB3state():
+	if ent3.get() == "":
+		setB3.config(state="disabled")
+		setB3.after(1000, setB3state)
+	else:
+		setB3.config(state="active")
+		setB3.after(1000, setB3state)
+
+def setB4state():
+	if ent4.get() == "":
+		setB4.config(state="disabled")
+		setB4.after(1000, setB4state)
+	else:
+		setB4.config(state="active")
+		setB4.after(1000, setB4state)
+
+def setB5state():
+	if ent5.get() == "":
+		setB5.config(state="disabled")
+		setB5.after(1000, setB5state)
+	else:
+		setB5.config(state="active")
+		setB5.after(1000, setB5state)
+
+def setB6state():
+	if ent6.get() == "":
+		setB6.config(state="disabled")
+		setB6.after(1000, setB6state)
+	else:
+		setB6.config(state="active")
+		setB6.after(1000, setB6state)
+
+
 startB1 = tk.Button(lbf1, text="Start Timer", justify="center", command=timer1Update)
 startB2 = tk.Button(lbf2, text="Start Timer", justify="center", command=timer2Update)
 startB3 = tk.Button(lbf3, text="Start Timer", justify="center", command=timer3Update)
@@ -355,5 +422,11 @@ clearB4.grid(row=3, column=3, sticky="n", padx=2, pady=2)
 clearB5.grid(row=3, column=4, sticky="n", padx=2, pady=2)
 clearB6.grid(row=3, column=5, sticky="n", padx=2, pady=2)
 
+setB1state()
+setB2state()
+setB3state()
+setB4state()
+setB5state()
+setB6state()
 
 root.mainloop()
