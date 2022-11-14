@@ -109,6 +109,7 @@ def timer6Start():
 	ent6.delete(0,last)
 	startB6.config(state="active")
 
+
 def timer1Update():
 	time1 = str(timer1.cget("text"))
 	ctime1 = time1.partition(":")
