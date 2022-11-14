@@ -57,6 +57,7 @@ def timer1Start():
 	timer1.config(text=time1)
 	last = len(ent1.get())
 	ent1.delete(0,last)
+	startB1.config(state="active")
 
 def timer2Start():
 	t = str(ent2.get())
@@ -66,6 +67,7 @@ def timer2Start():
 	timer2.config(text=time2)
 	last = len(ent2.get())
 	ent2.delete(0,last)
+	startB2.config(state="active")
 
 def timer3Start():
 	t = str(ent3.get())
@@ -75,6 +77,7 @@ def timer3Start():
 	timer3.config(text=time3)
 	last = len(ent3.get())
 	ent3.delete(0,last)
+	startB3.config(state="active")
 
 def timer4Start():
 	t = str(ent4.get())
@@ -84,6 +87,7 @@ def timer4Start():
 	timer4.config(text=time4)
 	last = len(ent4.get())
 	ent4.delete(0,last)
+	startB4.config(state="active")
 
 def timer5Start():
 	t = str(ent5.get())
@@ -93,6 +97,7 @@ def timer5Start():
 	timer5.config(text=time5)
 	last = len(ent5.get())
 	ent5.delete(0,last)
+	startB5.config(state="active")
 
 def timer6Start():
 	t = str(ent6.get())
@@ -102,6 +107,8 @@ def timer6Start():
 	timer6.config(text=time6)
 	last = len(ent6.get())
 	ent6.delete(0,last)
+	startB6.config(state="active")
+
 
 def timer1Update():
 	time1 = str(timer1.cget("text"))
@@ -109,6 +116,7 @@ def timer1Update():
 	cmins1, sep, csecs1 = ctime1
 	cmins1 = int(cmins1)
 	csecs1 = int(csecs1)
+	startB1.config(state="disabled")
 	if (cmins1 == 0) and ((csecs1 > 0) and (csecs1 < 11)):
 		timer1.config(text=str(cmins1) + ":" + ("0" + str(csecs1 - 1)))
 		timer1.after(1000, timer1Update)
@@ -125,6 +133,7 @@ def timer1Update():
 		timer1.config(text=str(cmins1) + ":" + str(csecs1 - 1))
 		timer1.after(1000, timer1Update)
 	else:
+		startB1.config(state="active")
 		lane1End = tk.Tk()
 		L1EndL = tk.Label(lane1End, text="Lane 1 Time Up!")
 		L1EndL.pack()
@@ -138,6 +147,7 @@ def timer2Update():
 	cmins2, sep, csecs2 = ctime2
 	cmins2 = int(cmins2)
 	csecs2 = int(csecs2)
+	startB2.config(state="disabled")
 	if (cmins2 == 0) and ((csecs2 > 0) and (csecs2 < 11)):
 		timer2.config(text=str(cmins2) + ":" + ("0" + str(csecs2 - 1)))
 		timer2.after(1000, timer2Update)
@@ -154,6 +164,7 @@ def timer2Update():
 		timer2.config(text=str(cmins2) + ":" + str(csecs2 - 1))
 		timer2.after(1000, timer2Update)
 	else:
+		startB2.config(state="active")
 		lane2End = tk.Tk()
 		L2EndL = tk.Label(lane2End, text="Lane 2 Time Up!")
 		L2EndL.pack()
@@ -167,6 +178,7 @@ def timer3Update():
 	cmins3, sep, csecs3 = ctime3
 	cmins3 = int(cmins3)
 	csecs3 = int(csecs3)
+	startB3.config(state="disabled")
 	if (cmins3 == 0) and ((csecs3 > 0) and (csecs3 < 11)):
 		timer3.config(text=str(cmins3) + ":" + ("0" + str(csecs3 - 1)))
 		timer3.after(1000, timer3Update)
@@ -183,6 +195,7 @@ def timer3Update():
 		timer3.config(text=str(cmins3) + ":" + str(csecs3 - 1))
 		timer3.after(1000, timer3Update)
 	else:
+		startB3.config(state="active")
 		lane3End = tk.Tk()
 		L3EndL = tk.Label(lane3End, text="Lane 3 Time Up!")
 		L3EndL.pack()
@@ -196,6 +209,7 @@ def timer4Update():
 	cmins4, sep, csecs4 = ctime4
 	cmins4 = int(cmins4)
 	csecs4 = int(csecs4)
+	startB4.config(state="disabled")
 	if (cmins4 == 0) and ((csecs4 > 0) and (csecs4 < 11)):
 		timer4.config(text=str(cmins4) + ":" + ("0" + str(csecs4 - 1)))
 		timer4.after(1000, timer4Update)
@@ -212,6 +226,7 @@ def timer4Update():
 		timer4.config(text=str(cmins4) + ":" + str(csecs4 - 1))
 		timer4.after(1000, timer4Update)
 	else:
+		startB4.config(state="active")
 		lane4End = tk.Tk()
 		L4EndL = tk.Label(lane4End, text="Lane 4 Time Up!")
 		L4EndL.pack()
@@ -225,6 +240,7 @@ def timer5Update():
 	cmins5, sep, csecs5 = ctime5
 	cmins5 = int(cmins5)
 	csecs5 = int(csecs5)
+	startB5.config(state="disabled")
 	if (cmins5 == 0) and ((csecs5 > 0) and (csecs5 < 11)):
 		timer5.config(text=str(cmins5) + ":" + ("0" + str(csecs5 - 1)))
 		timer5.after(1000, timer5Update)
@@ -241,6 +257,7 @@ def timer5Update():
 		timer5.config(text=str(cmins5) + ":" + str(csecs5 - 1))
 		timer5.after(1000, timer5Update)
 	else:
+		startB5.config(state="active")
 		lane5End = tk.Tk()
 		L5EndL = tk.Label(lane5End, text="Lane 5 Time Up!")
 		L5EndL.pack()
@@ -254,6 +271,7 @@ def timer6Update():
 	cmins6, sep, csecs6 = ctime6
 	cmins6 = int(cmins6)
 	csecs6 = int(csecs6)
+	startB6.config(state="disabled")
 	if (cmins6 == 0) and ((csecs6 > 0) and (csecs6 < 11)):
 		timer6.config(text=str(cmins6) + ":" + ("0" + str(csecs6 - 1)))
 		timer6.after(1000, timer6Update)
@@ -270,6 +288,7 @@ def timer6Update():
 		timer6.config(text=str(cmins6) + ":" + str(csecs6 - 1))
 		timer6.after(1000, timer6Update)
 	else:
+		startB6.config(state="active")
 		lane6End = tk.Tk()
 		L6EndL = tk.Label(lane6End, text="Lane 6 Time Up!")
 		L6EndL.pack()
