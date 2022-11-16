@@ -51,7 +51,9 @@ ent6.grid(row=0, column=10, columnspan=2, sticky="ewn", padx=5, pady=5)
 
 #define Funtions:
 
+
 def timer1Set():
+
 	t = str(ent1.get())
 	s = "00"
 	global time1
@@ -72,6 +74,7 @@ def timer2Set():
 	ent2.delete(0,last)
 	startB2.config(state="active")
 
+
 def timer3Set():
 	t = str(ent3.get())
 	s = "00"
@@ -81,6 +84,7 @@ def timer3Set():
 	last = len(ent3.get())
 	ent3.delete(0,last)
 	startB3.config(state="active")
+
 
 def timer4Set():
 	t = str(ent4.get())
@@ -92,6 +96,7 @@ def timer4Set():
 	ent4.delete(0,last)
 	startB4.config(state="active")
 
+
 def timer5Set():
 	t = str(ent5.get())
 	s = "00"
@@ -102,6 +107,7 @@ def timer5Set():
 	ent5.delete(0,last)
 	startB5.config(state="active")
 
+  
 def timer6Set():
 	t = str(ent6.get())	
 	s = "00"
@@ -496,6 +502,7 @@ startB3.grid(row=1, column=5, sticky="we", padx=5, pady=5)
 startB4.grid(row=1, column=7, sticky="we", padx=5, pady=5)
 startB5.grid(row=1, column=9, sticky="we", padx=5, pady=5)
 startB6.grid(row=1, column=11, sticky="we", padx=5, pady=5)
+
 
 clearB1 = tk.Button(lbf1, text="Clear", justify="right", command=z1)
 clearB2 = tk.Button(lbf2, text="Clear", justify="right", command=z2)
