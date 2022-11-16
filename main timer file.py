@@ -52,7 +52,9 @@ ent1.insert(0, "minutes")
 
 #define Funtions:
 
+
 def timer1Set():
+
 	try:
 		t = str(ent1.get())
 	except ValueError:
@@ -64,6 +66,7 @@ def timer1Set():
 	last = len(ent1.get())
 	ent1.delete(0,last)
 	startB1.config(state="active")
+
 
 def timer2Set():
 	try:
@@ -78,6 +81,7 @@ def timer2Set():
 	ent2.delete(0,last)
 	startB2.config(state="active")
 
+
 def timer3Set():
 	try:
 		t = str(ent3.get())
@@ -90,6 +94,7 @@ def timer3Set():
 	last = len(ent3.get())
 	ent3.delete(0,last)
 	startB3.config(state="active")
+
 
 def timer4Set():
 	try:
@@ -104,7 +109,9 @@ def timer4Set():
 	ent4.delete(0,last)
 	startB4.config(state="active")
 
+
 def timer5Set():
+
 	try:
 		t = str(ent5.get())
 	except ValueError:
@@ -117,6 +124,7 @@ def timer5Set():
 	ent5.delete(0,last)
 	startB5.config(state="active")
 
+  
 def timer6Set():
 	try:
 		t = str(ent6.get())
@@ -436,12 +444,13 @@ def setB6state():
 		setB6.after(1000, setB6state)
 
 
-startB1 = tk.Button(lbf1, text="Start Timer", justify="center", command=lambda:(timer1Update()))
-startB2 = tk.Button(lbf2, text="Start Timer", justify="center", command=lambda:(timer2Update()))
-startB3 = tk.Button(lbf3, text="Start Timer", justify="center", command=lambda:(timer3Update()))
-startB4 = tk.Button(lbf4, text="Start Timer", justify="center", command=lambda:(timer4Update()))
-startB5 = tk.Button(lbf5, text="Start Timer", justify="center", command=lambda:(timer5Update()))
-startB6 = tk.Button(lbf6, text="Start Timer", justify="center", command=lambda:(timer6Update()))
+startB1 = tk.Button(lbf1, text="Start Timer", justify="center", command=timer1Update)
+startB2 = tk.Button(lbf2, text="Start Timer", justify="center", command=timer2Update)
+startB3 = tk.Button(lbf3, text="Start Timer", justify="center", command=timer3Update)
+startB4 = tk.Button(lbf4, text="Start Timer", justify="center", command=timer4Update)
+startB5 = tk.Button(lbf5, text="Start Timer", justify="center", command=timer5Update)
+startB6 = tk.Button(lbf6, text="Start Timer", justify="center", command=timer6Update)
+
 startB1.grid(row=1, column=0, sticky="e", padx=2, pady=2)
 startB2.grid(row=1, column=1, sticky="e", padx=2, pady=2)
 startB3.grid(row=1, column=2, sticky="e", padx=2, pady=2)
