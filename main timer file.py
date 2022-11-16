@@ -149,21 +149,19 @@ def timer1Update():
 				timer1.after(1000, timer1Update)
 			else:
 				startB1.config(state="active")
-				lane1End = tk.Tk()
+				lane1End = tk.TopLevel()
 				L1EndL = tk.Label(lane1End, text="Lane 1 Time Up!")
 				L1EndL.pack()
 				L1EndB = tk.Button(lane1End, text="Okay", command=lane1End.destroy)
 				L1EndB.pack()
-				lane1End.mainloop()
 	except ValueError:
 		startB1.config(state="active")
-		lane1Oops = tk.Tk()
+		lane1Oops = tk.TopLevel()
 		L1Error = tk.Label(lane1Oops, text="Error: Please enter number of minutes only.")
 		L1Error.pack()
 		error1EndB = tk.Button(lane1Oops, text="my bad", command=lane1Oops.destroy)
 		error1EndB.pack(pady=3)
 		z1()
-		lane1Oops.mainloop()
 
 def timer2Update():
 	try:
@@ -195,21 +193,19 @@ def timer2Update():
 				timer2.after(1000, timer2Update)
 			else:
 				startB2.config(state="active")
-				lane2End = tk.Tk()
+				lane2End = tk.TopLevel()
 				L2EndL = tk.Label(lane2End, text="Lane 2 Time Up!")
 				L2EndL.pack()
 				L2EndB = tk.Button(lane2End, text="Okay", command=lane2End.destroy)
 				L2EndB.pack()
-				lane2End.mainloop()
 	except ValueError:
 		startB2.config(state="active")
-		lane2Oops = tk.Tk()
+		lane2Oops = tk.TopLevel()
 		L2Error = tk.Label(lane2Oops, text="Error: Please enter number of minutes only.")
 		L2Error.pack()
 		error2EndB = tk.Button(lane2Oops, text="my bad", command=lane2Oops.destroy)
 		error2EndB.pack(pady=3)
 		z2()
-		lane2Oops.mainloop()
 
 def timer3Update():
 	try:
@@ -241,21 +237,19 @@ def timer3Update():
 				timer3.after(1000, timer3Update)
 			else:
 				startB3.config(state="active")
-				lane3End = tk.Tk()
+				lane3End = tk.TopLevel()
 				L3EndL = tk.Label(lane3End, text="Lane 3 Time Up!")
 				L3EndL.pack()
 				L3EndB = tk.Button(lane3End, text="Okay", command=lane3End.destroy)
 				L3EndB.pack()
-				lane3End.mainloop()
 	except ValueError:
 		startB3.config(state="active")
-		lane3Oops = tk.Tk()
+		lane3Oops = tk.TopLevel()
 		L3Error = tk.Label(lane3Oops, text="Error: Please enter number of minutes only.")
 		L3Error.pack()
 		error3EndB = tk.Button(lane3Oops, text="my bad", command=lane3Oops.destroy)
 		error3EndB.pack(pady=3)
 		z3()
-		lane3Oops.mainloop()
 
 def timer4Update():
 	try:
@@ -287,21 +281,19 @@ def timer4Update():
 				timer4.after(1000, timer4Update)
 			else:
 				startB4.config(state="active")
-				lane4End = tk.Tk()
+				lane4End = tk.TopLevel()
 				L4EndL = tk.Label(lane4End, text="Lane 4 Time Up!")
 				L4EndL.pack()
 				L4EndB = tk.Button(lane4End, text="Okay", command=lane4End.destroy)
 				L4EndB.pack()
-				lane4End.mainloop()
 	except ValueError:
 		startB4.config(state="active")
-		lane4Oops = tk.Tk()
+		lane4Oops = tk.TopLevel()
 		L4Error = tk.Label(lane4Oops, text="Error: Please enter number of minutes only.")
 		L4Error.pack()
 		error4EndB = tk.Button(lane4Oops, text="my bad", command=lane4Oops.destroy)
 		error4EndB.pack(pady=3)
 		z4()
-		lane4Oops.mainloop()
 
 
 def timer5Update():
@@ -334,21 +326,20 @@ def timer5Update():
 				timer5.after(1000, timer5Update)
 			else:
 				startB5.config(state="active")
-				lane5End = tk.Tk()
+				lane5End = tk.TopLevel()
 				L5EndL = tk.Label(lane5End, text="Lane 5 Time Up!")
 				L5EndL.pack()
 				L5EndB = tk.Button(lane5End, text="Okay", command=lane5End.destroy)
 				L5EndB.pack()
-				lane5End.mainloop()
 	except ValueError:
 		startB5.config(state="active")
-		lane5Oops = tk.Tk()
+		lane5Oops = tk.TopLevel()
 		L5Error = tk.Label(lane5Oops, text="Error: Please enter number of minutes only.")
 		L5Error.pack()
 		error5EndB = tk.Button(lane5Oops, text="my bad", command=lane5Oops.destroy)
 		error5EndB.pack(pady=3)
 		z5()
-		lane5Oops.mainloop()
+		
 
 def timer6Update():
 	try:
@@ -380,21 +371,20 @@ def timer6Update():
 				timer6.after(1000, timer6Update)
 			else:
 				startB6.config(state="active")
-				lane6End = tk.Tk()
+				lane6End = tk.TopLevel()
 				L6EndL = tk.Label(lane6End, text="Lane 6 Time Up!")
 				L6EndL.pack()
 				L6EndB = tk.Button(lane6End, text="Okay", command=lane6End.destroy)
 				L6EndB.pack()
-				lane6End.mainloop()
 	except ValueError:
 		startB6.config(state="active")
-		lane6Oops = tk.Tk()
+		lane6Oops = tk.TopLevel()
 		L6Error = tk.Label(lane6Oops, text="Error: Please enter number of minutes only.")
 		L6Error.pack()
 		error6EndB = tk.Button(lane6Oops, text="my bad", command=lane6Oops.destroy)
 		error6EndB.pack(pady=3)
 		z6()
-		lane6Oops.mainloop()
+		
 
 
 def z1():
