@@ -2,8 +2,10 @@ import tkinter as tk
 
 root = tk.Tk()
 root.title("Lane Timer")
-icon = tk.PhotoImage(file=r"Python\PROJECTS\Lane Timer App\lane_timer_icon.gif")
-root.iconphoto(True, icon)
+# NOTE// The following comment was supposed to be for the icon of the root window so that it wasn't just the tkinter feather thing, BUT for SOME REASON, it just would not locate the file after pyinstaller turned it into a .exe file. I can make the icon for the .exe the picture, and that will have to do for now. TODO// Figure out how the frick pyinstaller can add images INTO the .exe file, or at least figure out how to get a picture loaded into a program after it's been turned into a .exe file.
+
+# icon = tk.PhotoImage(file=r"Python\PROJECTS\Lane Timer App\dist\lane_timer_icon.gif")
+# root.iconphoto(True, icon)
 
 background = tk.Frame(root, bg="#444444")
 background.grid(row=0, column=0, rowspan=4, columnspan=2)
@@ -107,7 +109,7 @@ def timer5Set():
 	ent5.delete(0,last)
 	startB5.config(state="active")
 
-  
+
 def timer6Set():
 	t = str(ent6.get())	
 	s = "00"
@@ -149,14 +151,14 @@ def timer1Update():
 				timer1.after(1000, timer1Update)
 			else:
 				startB1.config(state="active")
-				lane1End = tk.TopLevel()
+				lane1End = tk.Toplevel()
 				L1EndL = tk.Label(lane1End, text="Lane 1 Time Up!")
 				L1EndL.pack()
 				L1EndB = tk.Button(lane1End, text="Okay", command=lane1End.destroy)
 				L1EndB.pack()
 	except ValueError:
 		startB1.config(state="active")
-		lane1Oops = tk.TopLevel()
+		lane1Oops = tk.Toplevel()
 		L1Error = tk.Label(lane1Oops, text="Error: Please enter number of minutes only.")
 		L1Error.pack()
 		error1EndB = tk.Button(lane1Oops, text="my bad", command=lane1Oops.destroy)
@@ -193,14 +195,14 @@ def timer2Update():
 				timer2.after(1000, timer2Update)
 			else:
 				startB2.config(state="active")
-				lane2End = tk.TopLevel()
+				lane2End = tk.Toplevel()
 				L2EndL = tk.Label(lane2End, text="Lane 2 Time Up!")
 				L2EndL.pack()
 				L2EndB = tk.Button(lane2End, text="Okay", command=lane2End.destroy)
 				L2EndB.pack()
 	except ValueError:
 		startB2.config(state="active")
-		lane2Oops = tk.TopLevel()
+		lane2Oops = tk.Toplevel()
 		L2Error = tk.Label(lane2Oops, text="Error: Please enter number of minutes only.")
 		L2Error.pack()
 		error2EndB = tk.Button(lane2Oops, text="my bad", command=lane2Oops.destroy)
@@ -237,14 +239,14 @@ def timer3Update():
 				timer3.after(1000, timer3Update)
 			else:
 				startB3.config(state="active")
-				lane3End = tk.TopLevel()
+				lane3End = tk.Toplevel()
 				L3EndL = tk.Label(lane3End, text="Lane 3 Time Up!")
 				L3EndL.pack()
 				L3EndB = tk.Button(lane3End, text="Okay", command=lane3End.destroy)
 				L3EndB.pack()
 	except ValueError:
 		startB3.config(state="active")
-		lane3Oops = tk.TopLevel()
+		lane3Oops = tk.Toplevel()
 		L3Error = tk.Label(lane3Oops, text="Error: Please enter number of minutes only.")
 		L3Error.pack()
 		error3EndB = tk.Button(lane3Oops, text="my bad", command=lane3Oops.destroy)
@@ -281,14 +283,14 @@ def timer4Update():
 				timer4.after(1000, timer4Update)
 			else:
 				startB4.config(state="active")
-				lane4End = tk.TopLevel()
+				lane4End = tk.Toplevel()
 				L4EndL = tk.Label(lane4End, text="Lane 4 Time Up!")
 				L4EndL.pack()
 				L4EndB = tk.Button(lane4End, text="Okay", command=lane4End.destroy)
 				L4EndB.pack()
 	except ValueError:
 		startB4.config(state="active")
-		lane4Oops = tk.TopLevel()
+		lane4Oops = tk.Toplevel()
 		L4Error = tk.Label(lane4Oops, text="Error: Please enter number of minutes only.")
 		L4Error.pack()
 		error4EndB = tk.Button(lane4Oops, text="my bad", command=lane4Oops.destroy)
@@ -326,14 +328,14 @@ def timer5Update():
 				timer5.after(1000, timer5Update)
 			else:
 				startB5.config(state="active")
-				lane5End = tk.TopLevel()
+				lane5End = tk.Toplevel()
 				L5EndL = tk.Label(lane5End, text="Lane 5 Time Up!")
 				L5EndL.pack()
 				L5EndB = tk.Button(lane5End, text="Okay", command=lane5End.destroy)
 				L5EndB.pack()
 	except ValueError:
 		startB5.config(state="active")
-		lane5Oops = tk.TopLevel()
+		lane5Oops = tk.Toplevel()
 		L5Error = tk.Label(lane5Oops, text="Error: Please enter number of minutes only.")
 		L5Error.pack()
 		error5EndB = tk.Button(lane5Oops, text="my bad", command=lane5Oops.destroy)
@@ -371,14 +373,14 @@ def timer6Update():
 				timer6.after(1000, timer6Update)
 			else:
 				startB6.config(state="active")
-				lane6End = tk.TopLevel()
+				lane6End = tk.Toplevel()
 				L6EndL = tk.Label(lane6End, text="Lane 6 Time Up!")
 				L6EndL.pack()
 				L6EndB = tk.Button(lane6End, text="Okay", command=lane6End.destroy)
 				L6EndB.pack()
 	except ValueError:
 		startB6.config(state="active")
-		lane6Oops = tk.TopLevel()
+		lane6Oops = tk.Toplevel()
 		L6Error = tk.Label(lane6Oops, text="Error: Please enter number of minutes only.")
 		L6Error.pack()
 		error6EndB = tk.Button(lane6Oops, text="my bad", command=lane6Oops.destroy)
@@ -467,6 +469,50 @@ def setB6state():
 		setB6.config(state="active")
 		setB6.after(1000, setB6state)
 
+
+
+def startB1state():
+	if timer1.cget("text") == "00:00":
+		startB1.config(state="disabled")
+		startB1.after(1000, startB1state)
+	else:
+		startB1.after(1000, startB1state)
+
+def startB2state():
+	if timer2.cget("text") == "00:00":
+		startB2.config(state="disabled")
+		startB2.after(1000, startB2state)
+	else:
+		startB2.after(1000, startB2state)
+
+def startB3state():
+	if timer3.cget("text") == "00:00":
+		startB3.config(state="disabled")
+		startB3.after(1000, startB3state)
+	else:
+		startB3.after(1000, startB3state)
+
+def startB4state():
+	if timer4.cget("text") == "00:00":
+		startB4.config(state="disabled")
+		startB4.after(1000, startB4state)
+	else:
+		startB4.after(1000, startB4state)
+
+def startB5state():
+	if timer5.cget("text") == "00:00":
+		startB5.config(state="disabled")
+		startB5.after(1000, startB5state)
+	else:
+		startB5.after(1000, startB5state)
+
+def startB6state():
+	if timer6.cget("text") == "00:00":
+		startB6.config(state="disabled")
+		startB6.after(1000, startB6state)
+	else:
+		startB6.after(1000, startB6state)
+
 pauseB1 = tk.Button(lbf1,  width=5, text="Pause", command=lambda:((pauseB1.config(state="disabled")),(pauseB1.after(1000, lambda:(pauseB1.config(state="active"))))))
 pauseB2 = tk.Button(lbf2, width=5, text="Pause", command=lambda:((pauseB2.config(state="disabled")),(pauseB2.after(1000, lambda:(pauseB2.config(state="active"))))))
 pauseB3 = tk.Button(lbf3, width=5, text="Pause", command=lambda:((pauseB3.config(state="disabled")),(pauseB3.after(1000, lambda:(pauseB3.config(state="active"))))))
@@ -513,5 +559,12 @@ setB3state()
 setB4state()
 setB5state()
 setB6state()
+
+startB1state()
+startB2state()
+startB3state()
+startB4state()
+startB5state()
+startB6state()
 
 root.mainloop()
